@@ -1,0 +1,361 @@
+@import "tailwindcss";
+
+/* === EARLY 2000s JP WEB STYLE - TOUHOU PAGE === */
+
+:root {
+  /* Background Colors (Pastel/Light) */
+  --bg-main: #F0F8FF;
+  --bg-content: #FFFFFF;
+  --bg-pink: #FFE4E1;
+  --bg-lavender: #E6E6FA;
+  --bg-mint: #F0FFF0;
+  --bg-cream: #FFFAF0;
+
+  /* Accent Colors (Vibrant) */
+  --accent-primary: #9370DB;
+  --accent-pink: #FF69B4;
+  --accent-sky: #87CEEB;
+  --accent-plum: #DDA0DD;
+  --accent-gold: #FFD700;
+
+  /* Text Colors */
+  --text-primary: #333366;
+  --text-header: #663399;
+  --text-link: #0000FF;
+  --text-link-hover: #FF00FF;
+  --text-visited: #800080;
+
+  /* Border/Frame */
+  --border-main: #9370DB;
+  --border-light: #C0C0C0;
+  --shadow: #C0C0C0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "MS PGothic", "MS Gothic", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  background-image: radial-gradient(var(--accent-plum) 1px, transparent 1px);
+  background-size: 15px 15px;
+  margin: 0;
+  padding: 20px;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--text-link-hover);
+}
+
+a:visited {
+  color: var(--text-visited);
+}
+
+/* Page wrapper */
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-content);
+  border: 3px double var(--border-main);
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(180deg, var(--bg-pink), var(--bg-lavender));
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--border-main);
+}
+
+.site-header h1 {
+  font-size: 24px;
+  color: var(--text-header);
+  text-shadow: 2px 2px 0px #ffffff, 3px 3px 0px #cccccc;
+  margin: 0 0 5px 0;
+}
+
+.last-updated {
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+}
+
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(90deg, var(--bg-pink), var(--bg-lavender), var(--bg-pink));
+  padding: 5px 0;
+  border-top: 1px dashed var(--accent-plum);
+  border-bottom: 1px dashed var(--accent-plum);
+}
+
+.marquee span {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  color: var(--text-header);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main container - 2 column */
+.main-container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 160px;
+  min-width: 160px;
+  background: linear-gradient(180deg, var(--bg-pink), var(--bg-lavender));
+  border-right: 2px solid var(--border-light);
+  padding: 15px 10px;
+}
+
+.nav-section h3 {
+  font-size: 13px;
+  color: var(--text-header);
+  margin: 0 0 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed var(--accent-plum);
+}
+
+.nav-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-section li {
+  margin-bottom: 8px;
+}
+
+.nav-section a {
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text-link);
+}
+
+.nav-section a:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+.nav-section a::before {
+  content: "→ ";
+  color: var(--accent-pink);
+}
+
+.sidebar-character {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sidebar-character img {
+  max-width: 80px;
+  image-rendering: pixelated;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  padding: 15px;
+}
+
+/* Content boxes */
+.content-box {
+  margin-bottom: 15px;
+  background: var(--bg-content);
+  border: 2px solid var(--border-main);
+  box-shadow: 3px 3px 0px var(--shadow);
+}
+
+.content-box-header {
+  background: linear-gradient(90deg, var(--accent-plum), var(--accent-sky));
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border-main);
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.content-box-body {
+  padding: 15px;
+}
+
+/* Tables */
+.info-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--bg-cream);
+  font-size: 12px;
+}
+
+.info-table th {
+  background: var(--accent-plum);
+  border: 1px solid var(--border-main);
+  padding: 5px 8px;
+  text-align: left;
+  color: #333;
+}
+
+.info-table td {
+  border: 1px solid var(--border-light);
+  padding: 5px 8px;
+}
+
+.info-table tr:nth-child(even) {
+  background: var(--bg-pink);
+}
+
+/* Dividers */
+.divider-sparkle {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+  color: var(--accent-plum);
+  letter-spacing: 5px;
+}
+
+.divider-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-pink), var(--accent-sky), var(--accent-plum), transparent);
+  border: none;
+  margin: 15px 0;
+}
+
+/* Hit counter */
+.hit-counter {
+  display: inline-flex;
+  background: #000000;
+  padding: 2px;
+  border: 1px inset #808080;
+  margin: 10px 0;
+}
+
+.hit-counter span {
+  background: #000000;
+  color: #00FF00;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  padding: 2px 4px;
+  border: 1px solid #333333;
+}
+
+/* Button bar */
+.button-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  padding: 10px;
+  background: var(--bg-cream);
+  border-top: 2px groove var(--border-light);
+}
+
+.button-88x31 {
+  width: 88px;
+  height: 31px;
+  border: 1px solid #808080;
+  image-rendering: pixelated;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #333;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--bg-cream);
+  padding: 15px;
+  text-align: center;
+  border-top: 2px solid var(--border-main);
+}
+
+.copyright {
+  font-size: 11px;
+  color: #666;
+  margin: 10px 0 0 0;
+}
+
+/* Spell card headers */
+.spellcard-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #4a1942 50%, #1a1a2e 100%);
+  color: var(--accent-gold);
+  padding: 10px 20px;
+  border: 2px solid var(--accent-gold);
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--accent-gold);
+  margin-bottom: 15px;
+}
+
+.spellcard-header::before,
+.spellcard-header::after {
+  content: "★";
+  margin: 0 10px;
+}
+
+/* Stats highlight */
+.stat-highlight {
+  background: linear-gradient(90deg, var(--bg-mint), var(--bg-lavender));
+  border: 1px solid var(--accent-primary);
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-header);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #666;
+}
+
+/* Active nav */
+.nav-section a.active {
+  color: var(--accent-pink);
+  font-weight: bold;
+}
+
+/* Responsive - intentionally minimal for authentic feel */
+@media (max-width: 700px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--border-light);
+  }
+
+  .nav-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-section li {
+    margin-bottom: 0;
+  }
+}
