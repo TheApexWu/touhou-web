@@ -293,6 +293,60 @@ export default function Home() {
           </div>
 
           <div className="content-box">
+            <div className="content-box-header">♦ What Are &quot;Handcrafted Features&quot;? ♦</div>
+            <div className="content-box-body" style={{ fontSize: "11px" }}>
+              <p style={{ margin: "0 0 10px 0" }}>
+                Instead of using neural network embeddings, we extract <strong>431 interpretable audio measurements</strong> using signal processing (librosa):
+              </p>
+              <table className="info-table">
+                <thead>
+                  <tr>
+                    <th>Feature Type</th>
+                    <th>What It Measures</th>
+                    <th>Dims</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mel Spectrogram</td>
+                    <td>Energy across 128 frequency bands (mean, std per band)</td>
+                    <td>256</td>
+                  </tr>
+                  <tr>
+                    <td>MFCCs</td>
+                    <td>Timbral texture - 20 coefficients + deltas (rate of change)</td>
+                    <td>60</td>
+                  </tr>
+                  <tr>
+                    <td>Chroma</td>
+                    <td>Pitch class distribution (C, C#, D... B) - harmonic content</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Spectral Contrast</td>
+                    <td>Peak vs valley energy in 7 frequency bands</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Spectral Stats</td>
+                    <td>Centroid (brightness), bandwidth, rolloff, flatness</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>Tempo</td>
+                    <td>BPM estimate</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style={{ margin: "10px 0 0 0", color: "#888" }}>
+                <strong>Why this works better:</strong> UNDEAD CORPORATION&apos;s death metal has distinctive low spectral centroid + high contrast.
+                IOSYS&apos;s denpa has fast tempo + bright timbre. These patterns are directly measurable, while pretrained models weren&apos;t trained on Touhou arrangements.
+              </p>
+            </div>
+          </div>
+
+          <div className="content-box">
             <div className="content-box-header">♦ Interactive Demo ♦</div>
             <div className="content-box-body">
               <table className="info-table">
