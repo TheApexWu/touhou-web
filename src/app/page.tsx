@@ -339,10 +339,15 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-              <p style={{ margin: "10px 0 0 0", color: "#888" }}>
-                <strong>Why this works better:</strong> UNDEAD CORPORATION&apos;s death metal has distinctive low spectral centroid + high contrast.
-                IOSYS&apos;s denpa has fast tempo + bright timbre. These patterns are directly measurable, while pretrained models weren&apos;t trained on Touhou arrangements.
+              <p style={{ margin: "10px 0 0 0", color: "#663399" }}>
+                <strong>Why handcrafted beat pretrained:</strong>
               </p>
+              <ul style={{ margin: "5px 0 0 0", paddingLeft: "18px", color: "#555" }}>
+                <li><strong>Domain mismatch:</strong> CLAP trained on general audio (AudioSet), MERT on generic music - neither saw Touhou arrangements</li>
+                <li><strong>Style vs content:</strong> Pretrained models capture <em>what&apos;s playing</em> (instruments, genre), but circle style is subtler - production choices, mixing, arrangement patterns</li>
+                <li><strong>Small data:</strong> 954 tracks isn&apos;t enough to fine-tune large models; handcrafted + Random Forest works well with limited data</li>
+                <li><strong>Interpretable:</strong> We can explain <em>why</em> - UNDEAD CORPORATION has low spectral centroid (dark/heavy) + high contrast (metal), IOSYS has fast tempo + bright timbre (denpa)</li>
+              </ul>
             </div>
           </div>
 
@@ -512,7 +517,9 @@ export default function Home() {
         <div className="button-bar">
           <div className="button-88x31">Python 3.11</div>
           <div className="button-88x31">librosa</div>
+          <div className="button-88x31">soundfile</div>
           <div className="button-88x31">scikit-learn</div>
+          <div className="button-88x31">NumPy</div>
           <div className="button-88x31">Next.js</div>
         </div>
         <div className="hit-counter">
