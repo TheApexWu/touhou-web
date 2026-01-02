@@ -442,6 +442,19 @@ export default function Home() {
       </div>
 
       <footer className="site-footer">
+        <div className="content-box" style={{ margin: "0 15px 15px 15px", textAlign: "center" }}>
+          <div className="content-box-header">♦ Special Thanks ♦</div>
+          <div className="content-box-body" style={{ fontSize: "11px" }}>
+            <p style={{ margin: 0 }}>
+              Touhou Project © <strong>Team Shanghai Alice</strong> (ZUN)
+            </p>
+            <p style={{ margin: "5px 0 0 0", color: "#888" }}>
+              This is a fan-made analysis project. All original music and characters belong to ZUN.
+              <br />
+              東方Projectの二次創作です。
+            </p>
+          </div>
+        </div>
         <div className="button-bar">
           <div className="button-88x31">Python 3.11</div>
           <div className="button-88x31">librosa</div>
