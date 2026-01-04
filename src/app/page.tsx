@@ -20,6 +20,7 @@ export default function Home() {
               <li><Link href="/" className="active">Home</Link></li>
               <li><Link href="/explorer">Track Explorer</Link></li>
               <li><Link href="/classifier">Circle Classifier</Link></li>
+              <li><Link href="/games">Game Opinions</Link></li>
             </ul>
           </div>
           <div className="nav-section" style={{ marginTop: "15px" }}>
@@ -497,6 +498,7 @@ export default function Home() {
               </p>
             </div>
           </div>
+
         </main>
       </div>
 
